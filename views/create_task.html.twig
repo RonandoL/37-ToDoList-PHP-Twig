@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>You created a task!</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+  </head>
+
+  <body>
+
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-4'>
+          <h1>You created a task!</h1>
+
+          <p>{{ newtask.getTask }}</p>
+
+
+          <form action='/'>
+            <button type='submit' class='btn'>View all tasks</button>
+          </form>
+
+        </div>  <!-- .col-md-4 -->
+      </div>  <!-- .row -->
+    </div>  <!-- .container -->
+
+  </body>
+</html>
