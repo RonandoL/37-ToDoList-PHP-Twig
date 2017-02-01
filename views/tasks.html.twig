@@ -13,29 +13,34 @@
         <div class='col-md-4'>
           <h1>Tasks: To Do List</h1>
 
-          {% if tasks is not empty %}
-              <p>Here are all your tasks</p>
-              <ul>
-                  {% for task in tasks %}
-                      <li>{{ task.getTask }}</li>
-                  {% endfor %}
-              </ul>
-          {% endif %}
-
           <form action='/tasks' method='post'>
             <div class='form-group'>
               <label for='task'>Enter task you need done</label>
               <input type='text' name='task' id='task' class='form-control' placeholder='Personal Slave'>
             </div>
-            <button type='submit' class='btn btn-lg btn-info'>Submit Task</button>
+            <button type='submit' class='btn btn-sm btn-primary'>Submit Task</button>
           </form>
 
           <br>
           <form action='/delete' method='post'>
-            <button type='submit' class='btn'>Delete All Tasks</button>
+            <button type='submit' class='btn btn-sm'>Delete All Tasks</button>
           </form>
 
-        </div>  <!-- .col-md-4 -->
+        </div>  <!-- .col-md-3 -->
+      </div>  <!-- .row -->
+
+      <div class='row'>
+          <div class='col-md-3'>
+              <hr>
+              {% if tasks is not empty %}
+                  <h4>Here are all your tasks</h4>
+                  <ul>
+                      {% for task in tasks %}
+                          <li>{{ task.getTask }}</li>
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+          </div>
       </div>  <!-- .row -->
     </div>  <!-- .container -->
 

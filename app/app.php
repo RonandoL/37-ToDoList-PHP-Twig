@@ -25,10 +25,10 @@
     $app->post("/tasks", function() use ($app) {
         $task = new Task($_POST["task"]);     // Instantiation
         $save = $task->save();
-
-        return $app['twig']->render('create_task.html.twig', array('newtask' => $task));
+        return $app['twig']->render('create_task.html.twig', array('newtask' => $task, 'tasks' => Task::getAll()));
     });
 
+  // 3. Route for deleting all tasks
     $app->post('/delete', function() use ($app) {
         Task::deleteAll();
         return $app['twig']->render('delete_tasks.html.twig');

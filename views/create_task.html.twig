@@ -11,16 +11,26 @@
     <div class='container'>
       <div class='row'>
         <div class='col-md-4'>
-          <h1>You created a task!</h1>
-
+          <h3>Your new task!</h3>
           <p>{{ newtask.getTask }}</p>
-
-
           <form action='/'>
-            <button type='submit' class='btn'>View all tasks</button>
+            <button type='submit' class='btn'>Go back to form</button>
           </form>
-
         </div>  <!-- .col-md-4 -->
+      </div>  <!-- .row -->
+
+      <div class='row'>
+          <div class='col-md-3'>
+              <hr>
+              {% if tasks is not empty %}
+                  <h4>Here are all your tasks</h4>
+                  <ul>
+                      {% for task in tasks %}
+                          <li>{{ task.getTask }}</li>
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+          </div>
       </div>  <!-- .row -->
     </div>  <!-- .container -->
 
